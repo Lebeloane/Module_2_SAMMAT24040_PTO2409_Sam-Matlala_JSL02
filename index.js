@@ -1,8 +1,10 @@
+// Lesson 1: Introduction to the DOM
+// Function to display a welcome message with the current date
 const welcomeMessage = () => {
-    const today = new Date().toDateString();
-    document.getElementById('welcomeMessage').textContent = `🤸🏾‍♀️ Welcome to Your Fitness Tracker 🥗 Today is ${today}`;
+    const today = new Date().toDateString(); // Get the current date as a readable string
+    document.getElementById('welcomeMessage').textContent = `🤸🏾‍♀️ Welcome to Your Fitness Tracker 🥗 Today is ${today}`; // Update the welcome message in the DOM
 };
-welcomeMessage();
+welcomeMessage(); // Call the function to display the message
 
 const displayWorkoutRoutine = () => {
     const workoutInput = document.querySelector('#workoutInput').value;
