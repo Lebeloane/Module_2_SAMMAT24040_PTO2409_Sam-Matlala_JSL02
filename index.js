@@ -26,33 +26,25 @@ const displayWorkoutRoutine = () => {
     workoutList.appendChild(newWorkout); // Append the new workout to the list
 };
 
-document.querySelector('#submitWorkout').addEventListener('click', displayWorkoutRoutine);
+document.querySelector('#submitWorkout').addEventListener('click', displayWorkoutRoutine); // Add event listener to the workout submit button
 
-// ⚠️⚠️⚠️ Lesson 3: Creating and Removing Elements ⚠️⚠️⚠️
-// Function to add new fitness goals and remove completed ones
-// NOW LET'S DEBUG TO PREVENT DUPLICATE GOALS FROM BEING SUBMITTED 🚀
-
+// Lesson 3: Creating and Removing Elements
+// Function to add a new goal to the goal list and prevent duplicates
 const addNewGoal = () => {
-    const goalInput = document.querySelector('#goalInput').value;
-    const goalList = document.querySelector('#goalList');
-    
-    // ⚠️ Hint 1: Check for duplicates
-    // Use 'goalList' to get all existing goals and check if 'goalInput' matches any of them.
-    
-    // ⚠️ Hint 2: Prevent duplicates
-    // If a duplicate is found, display an alert to the user and don't add the goal to the list.
-    // If it's not a duplicate, proceed with adding it as a new goal.
-    
-    // ⚠️ Hint 3: Code structure
-    // You might want to wrap the duplicate-checking logic in an 'if' statement.
-    
-    // ⚠️ Hint 4: Event listener
-    // The event listener that removes goals when clicked is not related to this issue.
-    // Focus on preventing duplicates for now.
-    
-    const newGoal = document.createElement('li');
-    newGoal.textContent = goalInput;
-    goalList.appendChild(newGoal);
+    const goalInput = document.querySelector('#goalInput').value; // Get the value from the goal input field
+    const goalList = document.querySelector('#goalList'); // Get the goal list element
+
+    let values = goalList.children; // Get all existing goal list items
+    for (let goal = 0; goal < values.length; goal++) {
+        if (values[goal].textContent === goalInput) { // Check for duplicate goals
+            alert('Goal Already Exists ⚠️'); // Alert the user about the duplicate
+            return; // Stop the function
+        }
+    }
+
+    const newGoal = document.createElement('li'); // Create a new list item
+    newGoal.textContent = goalInput; // Set the text content to the input value
+    goalList.appendChild(newGoal); // Append the new goal to the list
 };
 
 // Add event listener to the goal submit button
