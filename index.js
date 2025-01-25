@@ -6,12 +6,24 @@ const welcomeMessage = () => {
 };
 welcomeMessage(); // Call the function to display the message
 
+// Lesson 2: Selecting and Manipulating Elements
+// Function to add a workout to the workout list and prevent duplicates
 const displayWorkoutRoutine = () => {
-    const workoutInput = document.querySelector('#workoutInput').value;
-    const workoutList = document.querySelector('#workoutList');
-    const newWorkout = document.createElement('li');
-    newWorkout.textContent = workoutInput;
-    workoutList.appendChild(newWorkout);
+    const workoutInput = document.querySelector('#workoutInput').value; // Get the value from the workout input field
+    const workoutList = document.querySelector('#workoutList'); // Get the workout list element
+
+    // Check if the workout already exists in the list
+    let values = workoutList.children; // Get all existing workout list items
+    for (let workout = 0; workout < values.length; workout++) {
+        if (values[workout].textContent === workoutInput) { // Check for duplicate workouts
+            alert('Workout Already Exists ⚠️'); // Alert the user about the duplicate
+            return; // Stop the function
+        }
+    }
+
+    const newWorkout = document.createElement('li'); // Create a new list item
+    newWorkout.textContent = workoutInput; // Set the text content to the input value
+    workoutList.appendChild(newWorkout); // Append the new workout to the list
 };
 
 document.querySelector('#submitWorkout').addEventListener('click', displayWorkoutRoutine);
