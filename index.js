@@ -47,18 +47,18 @@ const addNewGoal = () => {
     goalList.appendChild(newGoal); // Append the new goal to the list
 };
 
-// Add event listener to the goal submit button
-document.querySelector('#submitGoal').addEventListener('click', addNewGoal);
+document.querySelector('#submitGoal').addEventListener('click', addNewGoal); // Add event listener to the goal submit button
 
-///
-let waterIntake = 0;
+// Lesson 4: Event Handling
+// Variables and functions to track and update water intake
+let waterIntake = 0; // Initialize water intake to 0
 const updateWaterIntake = (change) => {
-    waterIntake += change;
-    document.querySelector('#waterIntakeDisplay').textContent = `${waterIntake} glasses 💦`;
+    waterIntake += change; // Update water intake based on the change value (+1 or -1)
+    document.querySelector('#waterIntakeDisplay').textContent = `${waterIntake} glasses 💦`; // Update the display
 };
 
-document.querySelector('#increaseWater').addEventListener('click', () => updateWaterIntake(1));
-document.querySelector('#decreaseWater').addEventListener('click', () => updateWaterIntake(-1));
+document.querySelector('#increaseWater').addEventListener('click', () => updateWaterIntake(1)); // Increase water intake by 1
+document.querySelector('#decreaseWater').addEventListener('click', () => updateWaterIntake(-1)); // Decrease water intake by 1
 
 const updateProgressCharts = () => {
     document.querySelector('#workoutProgress').textContent = "Updated workout progress...";
