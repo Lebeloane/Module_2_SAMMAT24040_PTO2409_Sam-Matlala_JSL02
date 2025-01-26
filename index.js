@@ -60,22 +60,27 @@ const updateWaterIntake = (change) => {
 document.querySelector('#increaseWater').addEventListener('click', () => updateWaterIntake(1)); // Increase water intake by 1
 document.querySelector('#decreaseWater').addEventListener('click', () => updateWaterIntake(-1)); // Decrease water intake by 1
 
+// Lesson 5: Advanced DOM Manipulation
+// Function to update progress charts (mock data for now)
 const updateProgressCharts = () => {
-    document.querySelector('#workoutProgress').textContent = "Updated workout progress...";
-    document.querySelector('#calorieIntakeProgress').textContent = "Updated calorie intake progress...";
+    document.querySelector('#workoutProgress').textContent = "Updated workout progress..."; // Update workout progress
+    document.querySelector('#calorieIntakeProgress').textContent = "Updated calorie intake progress..."; // Update calorie intake progress
 };
+updateProgressCharts(); // Call the function to initialize progress charts
 
-updateProgressCharts();
-
+// Lesson 6: CSS Manipulation via JavaScript
+// Function to toggle the website theme between light and dark
 const toggleTheme = () => {
-    document.body.classList.toggle('dark-theme');
+    document.body.classList.toggle('dark-theme'); // Toggle the 'dark-theme' class on the body element
 };
 
-document.querySelector('#themeToggle').addEventListener('click', toggleTheme);
+document.querySelector('#themeToggle').addEventListener('click', toggleTheme); // Add event listener to the theme toggle button
 
+// Lesson 7: Handling Forms and User Input
+// Function to handle meal plan form submission
 const submitMealPlan = (event) => {
-    event.preventDefault(); 
-    alert('Meal plan submitted successfully! 🍴');
+    event.preventDefault(); // Prevent the default form submission behavior
+    alert('Meal plan submitted successfully! 🍴'); // Alert the user about successful submission
 };
 
-document.querySelector('#mealPlanForm').addEventListener('submit', submitMealPlan);
+document.querySelector('#mealPlanForm').addEventListener('submit', submitMealPlan); // Add event listener to the meal plan form
